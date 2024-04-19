@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Custom Pricing Calculator 2023</title>
+<style>
+    body {
+        font-family: Arial, sans-serif; /* Sets a nice, readable font */
+        background-color: #f4f4f9; /* Light grey background for easier viewing */
+        padding: 20px; /* Adds some space inside the body element */
+        margin: 0; /* Removes the default margin */
+    }
+    h1 {
+        color: #333; /* Dark grey text for the heading */
+    }
+    p {
+        color: #666; /* Lighter grey for paragraph text */
+    }
+    input, button {
+        font-size: 16px; /* Larger font size for better readability */
+        padding: 10px; /* Padding inside the input fields and button */
+        margin: 5px 0; /* Space above and below inputs and button */
+        border: 1px solid #ddd; /* Subtle border for inputs */
+    }
+    button {
+        background-color: #5c67f2; /* Blue background for the button */
+        color: white; /* White text on the button */
+        border: none; /* No border for a cleaner look */
+        cursor: pointer; /* Pointer cursor on hover */
+        transition: background-color 0.3s; /* Smooth transition for button on hover */
+    }
+    button:hover {
+        background-color: #4a54e1; /* Darker blue when hovering over the button */
+    }
+</style>
+</head>
+<body>
+    <h1>GeoGrid Pricing Calculator</h1>
+    <p> Price per unit 0.001385 <p>
+        <p>Enter the number of GeoGrid units:</p>
+        <input type="number" id="geogridCount" placeholder="Enter units">
+        <button onclick="calculateGeoGridPrice()">Calculate Price</button>
+        <p>Total Price: $<span id="totalGeoGridPrice">0.00</span></p>
+
+        <script>
+        function calculateGeoGridPrice() {
+            var unitPrice = 0.001385; // price per GeoGrid unit
+            var units = document.getElementById('geogridCount').value;
+            var totalPrice = units * unitPrice;
+            document.getElementById('totalGeoGridPrice').innerText = totalPrice.toFixed(2);
+        }
+        </script>
+    </body>
+    </html>
