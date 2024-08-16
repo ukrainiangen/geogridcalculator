@@ -1,5 +1,6 @@
 
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -38,10 +39,20 @@
 </head>
 <body>
     <h1>GeoGrid Pricing Calculator</h1>
-    <p> Price per unit 0.001385 <p>
-        <p>Enter the number of GeoGrid units:</p>
-        <input type="number" id="geogridCount" placeholder="Enter units">
-        <button onclick="calculateGeoGridPrice()">Calculate Price</button>
-        <p>Total Price: $<span id="totalGeoGridPrice">0.00</span></p>
-  </body>
-    </html>
+    <p>Price per unit: 0.001385</p>
+    <p>Enter the number of GeoGrid units:</p>
+    <input type="number" id="geogridCount" placeholder="Enter units">
+    <button onclick="calculateGeoGridPrice()">Calculate Price</button>
+    <p>Total Price: $<span id="totalGeoGridPrice">0.00</span></p>
+
+    <script>
+        function calculateGeoGridPrice() {
+            const unitPrice = 0.001385;
+            const geogridCount = document.getElementById('geogridCount').value;
+            const totalGeoGridPrice = unitPrice * geogridCount;
+            document.getElementById('totalGeoGridPrice').innerText = totalGeoGridPrice.toFixed(2);
+        }
+    </script>
+</body>
+</html>
+
